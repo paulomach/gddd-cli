@@ -1,0 +1,9 @@
+*~
+.coverage
+.env
+.idea
+.venv
+.vscode
+/.tox
+__pycache__
+venv
