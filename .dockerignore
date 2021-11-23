@@ -1,0 +1,9 @@
+*.ini
+*.md
+*.toml
+*.vscode
+.coverage
+.gitignore
+.tox/
+__pycache__/
+test/
