@@ -2,12 +2,15 @@
 import os
 import unittest
 
-import configuration
-
 
 class TestConfiguration(unittest.TestCase):
     """Test configuration."""
 
+    def setUp(self):
+        """Set up."""
+        os.environ['DOMAIN'] = "example.com"
+
     def test_configuration(self):
         """Test configuration."""
-        self.assertEqual(configuration.DOMAIN, "home.paulmach.dev")
+        import configuration
+        self.assertEqual(configuration.DOMAIN, "example.com")

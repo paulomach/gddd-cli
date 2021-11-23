@@ -12,5 +12,5 @@ DOMAIN = os.getenv("DOMAIN")
 SERVICE = os.getenv("SERVICE")
 USER_AGENT = os.getenv("USER_AGENT")
 
-NO_NET_INTERVAL = int(os.getenv("NO_NET_INTERVAL"))
-NO_CHANGE_INTERVAL = int(os.getenv("NO_CHANGE_INTERVAL"))
+NO_NET_INTERVAL = int(os.getenv("NO_NET_INTERVAL", 600))
+NO_CHANGE_INTERVAL = int(os.getenv("NO_CHANGE_INTERVAL", 300))
