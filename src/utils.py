@@ -4,6 +4,11 @@ import socket
 import requests
 
 
+def log(message):
+    """Log a container message."""
+    print(message, flush=True)
+
+
 def get_host_ip(domain):
     """Get IP address for a domain."""
     return socket.gethostbyname(domain)
@@ -15,7 +20,8 @@ def get_public_ip():
         r = requests.get('https://api.ipify.org?format=json')
         return r.json()['ip']
     except Exception as e:
-        return e
+        log(e)
+        return None
 
 
 def dyndns_updated_request(request_url, headers):
@@ -28,7 +34,7 @@ def dyndns_updated_request(request_url, headers):
         )
         return r.text
     except Exception as e:
-        print(e)
+        log(e)
         return None
 
 
